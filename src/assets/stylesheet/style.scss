@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 @import "reset";
+@import "header";
 
 :root {
   --background-color: #f1f2f6;
+
+  --template-brand-color: #2f3542;
+  --color-white: #fff;
 }
 
 body {
