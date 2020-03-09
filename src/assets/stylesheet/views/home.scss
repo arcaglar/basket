@@ -1,0 +1,18 @@
+.item-list {
+  width: 100%;
+  float: left;
+  padding: 20px;
+
+  &__item {
+    width: calc(25% - 16px);
+    height: 220px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--template-brand-color);
+
+    &:nth-child(4n + 4) {
+      margin-right: 0;
+    }
+  }
+}

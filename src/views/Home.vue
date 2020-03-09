@@ -1,7 +1,9 @@
 <template>
   <div>
     <Header />
-    <div class="home">its home component</div>
+    <ul class="item-list">
+      <li class="item-list__item" v-for="(item, key) in 12" :key="key"></li>
+    </ul>
   </div>
 </template>
 
