@@ -2,18 +2,18 @@
   <header class="header">
     <div class="header__logo">arcaglar</div>
     <div class="shopping-cart">
-      <div class="shopping-cart__badge">4</div>
-      <img
-        src="@/assets/image/shopping-basket.svg"
-        class="shopping-cart__icon"
-      />
-      <span>Cart</span>
+      <shopping-cart></shopping-cart>
     </div>
   </header>
 </template>
 
 <script>
+import ShoppingCart from "@/components/header-shopping-cart";
+
 export default {
-  name: "Header"
+  name: "Header",
+  components: {
+    ShoppingCart
+  }
 };
 </script>
