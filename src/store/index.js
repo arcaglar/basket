@@ -1,11 +1,18 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
+import createPersistedState from "vuex-persistedstate";
+
+import order from "@/store/order";
+
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {}
+const store = new Vuex.Store({
+  modules: {
+    order
+  },
+  plugins: [createPersistedState()],
+  strict: process.env.NODE_ENV !== "production"
 });
+
+export default store;

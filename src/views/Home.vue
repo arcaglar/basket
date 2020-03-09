@@ -14,6 +14,11 @@ export default {
   name: "Home",
   components: {
     Header
+  },
+  created() {
+    this.$store.dispatch("order/getProducts").then(response => {
+      console.log(response);
+    });
   }
 };
 </script>
