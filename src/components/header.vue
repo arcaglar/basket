@@ -1,9 +1,7 @@
 <template>
   <header class="header">
     <div class="header__logo">arcaglar</div>
-    <div class="shopping-cart">
-      <shopping-cart></shopping-cart>
-    </div>
+    <shopping-cart></shopping-cart>
   </header>
 </template>
 
