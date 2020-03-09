@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+@import "reset";
+
+:root {
+  --background-color: #f1f2f6;
+}
+
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  background-color: var(--background-color);
+}
