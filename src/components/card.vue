@@ -7,12 +7,14 @@
         <span>{{ item.price }}</span>
         <span>{{ item.currency }}</span>
       </div>
-      <div class="card__button">Sepete Ekle</div>
+      <div class="card__button" @click="addBasket(item)">Sepete Ekle</div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "Card",
   props: {
@@ -20,6 +22,11 @@ export default {
       type: Object,
       required: true
     }
+  },
+  methods: {
+    ...mapActions({
+      addBasket: "order/addBasket"
+    })
   }
 };
 </script>
