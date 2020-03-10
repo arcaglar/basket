@@ -16,7 +16,12 @@
       </div>
     </div>
     <div class="card__bottom" v-else>
-      <input type="number" class="card__amount" />
+      <input
+        type="number"
+        class="card__amount"
+        :value="item.amount"
+        @change="amount($event)"
+      />
       <div class="card__price">
         <span>{{ item.price }}</span>
         <span>{{ item.currency }}</span>
@@ -50,7 +55,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      addBasket: "order/addBasket"
+      addBasket: "order/addBasket",
+      changeAmount: "order/changeAmount"
     }),
     selectItem(item) {
       this.addBasket(item);
@@ -63,6 +69,13 @@ export default {
       item.length > 0
         ? (this.isButtonVisibility = false)
         : (this.isButtonVisibility = true);
+    },
+    amount(e) {
+      let data = {
+        id: this.item.id,
+        value: e.target.value
+      };
+      this.changeAmount(data);
     }
   },
   created() {
