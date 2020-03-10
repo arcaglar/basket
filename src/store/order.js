@@ -14,6 +14,9 @@ export default {
     },
     changeAmount({ commit }, data) {
       commit("SET_ITEM_AMOUNT", data);
+    },
+    deleteProduct({ commit }, id) {
+      commit("REMOVE_PRODUCT", id);
     }
   },
   mutations: {
@@ -26,6 +29,14 @@ export default {
         if (state.basket[i].id === payload.id) {
           state.basket[i].amount = payload.value;
           state.basket[i].price = payload.price;
+        }
+      }
+    },
+    REMOVE_PRODUCT(state, payload) {
+      console.log(payload);
+      for (let i = 0; i < state.basket.length; i++) {
+        if (state.basket[i].id === payload) {
+          state.basket.splice(i, 1);
         }
       }
     }

@@ -12,7 +12,7 @@
       >
         Alışverişe Devam Et
       </div>
-      <div class="button button--normal">Sipariş Vere</div>
+      <div class="button button--normal">Sipariş Ver</div>
     </div>
   </div>
 </template>

@@ -8,6 +8,26 @@
   border: 1px solid var(--template-border-color);
   cursor: pointer;
   background-color: var(--color-white);
+  position: relative;
+
+  &__remove-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    transition: var(--template-transition);
+    padding: 6px 12px;
+    border-bottom-left-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 
   &__image {
     height: 100px;

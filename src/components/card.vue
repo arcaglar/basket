@@ -16,6 +16,7 @@
       </div>
     </div>
     <div class="card__bottom" v-else>
+      <div class="card__remove-button" @click="deleteProduct(item.id)">Sil</div>
       <input
         type="number"
         class="card__amount"
@@ -57,7 +58,8 @@ export default {
   methods: {
     ...mapActions({
       addBasket: "order/addBasket",
-      changeAmount: "order/changeAmount"
+      changeAmount: "order/changeAmount",
+      deleteProduct: "order/deleteProduct"
     }),
     selectItem(item) {
       this.addBasket(item);
