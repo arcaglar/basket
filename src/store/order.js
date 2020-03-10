@@ -9,6 +9,9 @@ export default {
     getProducts() {
       return Vue.prototype.$http.get(`/listing`);
     },
+    completeOrder(_, data) {
+      return Vue.prototype.$http.post(`/order`, data);
+    },
     addBasket({ commit }, item) {
       commit("SET_BASKET", item);
     },
@@ -33,7 +36,6 @@ export default {
       }
     },
     REMOVE_PRODUCT(state, payload) {
-      console.log(payload);
       for (let i = 0; i < state.basket.length; i++) {
         if (state.basket[i].id === payload) {
           state.basket.splice(i, 1);
