@@ -15,6 +15,7 @@ export default {
   },
   mutations: {
     SET_BASKET(state, payload) {
+      payload.amount = 1;
       state.basket.push(payload);
     }
   }
