@@ -1,13 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 @import "reset";
 @import "header";
+@import "card";
 @import "views/home";
 
 :root {
   --background-color: #f1f2f6;
 
   --template-brand-color: #2f3542;
+  --template-primary-color: #ff7f50;
+  --template-border-color: #ced6e0;
   --color-white: #fff;
+
+  --template-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.15);
+
+  --template-transition: all 0.4s cubic-bezier(0.56, 1.19, 0.2, 1.05);
 }
 
 body {
@@ -18,4 +25,9 @@ body {
   line-height: normal;
   letter-spacing: normal;
   background-color: var(--background-color);
+}
+
+#app {
+  width: 1000px;
+  margin: 0 auto;
 }

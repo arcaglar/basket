@@ -2,22 +2,31 @@
   <div>
     <Header />
     <ul class="item-list">
-      <li class="item-list__item" v-for="(item, key) in 12" :key="key"></li>
+      <li class="item-list__item" v-for="(item, key) in data" :key="key">
+        <Card :item="item" />
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 import Header from "@/components/header";
+import Card from "@/components/card";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      data: []
+    };
+  },
   components: {
-    Header
+    Header,
+    Card
   },
   created() {
     this.$store.dispatch("order/getProducts").then(response => {
-      console.log(response);
+      this.data = response.data;
     });
   }
 };
