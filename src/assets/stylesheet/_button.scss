@@ -1,0 +1,38 @@
+.button-group {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.button {
+  float: left;
+  height: 30px;
+  padding: 0px 14px;
+  line-height: 30px;
+  font-size: 12px;
+  border-radius: 4px;
+  opacity: 0.8;
+  transition: var(--template-transition);
+  cursor: pointer;
+  user-select: none;
+
+  &--normal {
+    background-color: var(--template-primary-color);
+    color: var(--color-white);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &--outline {
+    border: 1px solid var(--template-primary-color);
+    color: var(--template-primary-color);
+
+    &:hover {
+      background-color: var(--template-primary-color);
+      color: var(--color-white);
+    }
+  }
+}
+.button + .button {
+  margin-left: 15px;
+}

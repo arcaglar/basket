@@ -5,6 +5,15 @@
         <Card :item="item" :type="'order'" />
       </li>
     </ul>
+    <div class="button-group">
+      <div
+        class="button button--outline"
+        @click="$router.push({ name: 'Home' })"
+      >
+        Alışverişe Devam Et
+      </div>
+      <div class="button button--normal">Sipariş Vere</div>
+    </div>
   </div>
 </template>
 
