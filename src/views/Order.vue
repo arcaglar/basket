@@ -1,5 +1,5 @@
 <template>
-  <div>asdas</div>
+  <div class="page-inner"></div>
 </template>
 
 <script>
