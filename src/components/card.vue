@@ -37,7 +37,8 @@ export default {
   name: "Card",
   data() {
     return {
-      isButtonVisibility: true
+      isButtonVisibility: true,
+      orginalPrice: this.item.price
     };
   },
   props: {
@@ -71,9 +72,11 @@ export default {
         : (this.isButtonVisibility = true);
     },
     amount(e) {
+      let price = this.orginalPrice * e.target.value;
       let data = {
         id: this.item.id,
-        value: e.target.value
+        value: e.target.value,
+        price: price
       };
       this.changeAmount(data);
     }

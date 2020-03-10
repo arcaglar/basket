@@ -25,6 +25,7 @@ export default {
       for (let i = 0; i < state.basket.length; i++) {
         if (state.basket[i].id === payload.id) {
           state.basket[i].amount = payload.value;
+          state.basket[i].price = payload.price;
         }
       }
     }
