@@ -7,26 +7,55 @@
         <span>{{ item.price }}</span>
         <span>{{ item.currency }}</span>
       </div>
-      <div class="card__button" @click="addBasket(item)">Sepete Ekle</div>
+      <div
+        class="card__button"
+        v-if="isButtonVisibility"
+        @click="selectItem(item)"
+      >
+        Sepete Ekle
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 export default {
   name: "Card",
+  data() {
+    return {
+      isButtonVisibility: true
+    };
+  },
   props: {
     item: {
       type: Object,
       required: true
     }
   },
+  computed: {
+    ...mapState("order", ["basket"])
+  },
   methods: {
     ...mapActions({
       addBasket: "order/addBasket"
-    })
+    }),
+    selectItem(item) {
+      this.addBasket(item);
+      this.itemInBasketCheck();
+    },
+    itemInBasketCheck() {
+      let item = this.basket.filter(x => {
+        return x.id === this.item.id;
+      });
+      item.length > 0
+        ? (this.isButtonVisibility = false)
+        : (this.isButtonVisibility = true);
+    }
+  },
+  created() {
+    this.itemInBasketCheck();
   }
 };
 </script>
