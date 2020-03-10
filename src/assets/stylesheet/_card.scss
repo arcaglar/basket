@@ -58,4 +58,14 @@
       transform: scale(1.05);
     }
   }
+
+  &__amount {
+    width: 40px;
+    height: 24px;
+    padding: 3px;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid var(--template-border-color);
+    border-radius: 4px;
+  }
 }

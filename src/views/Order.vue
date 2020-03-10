@@ -1,9 +1,24 @@
 <template>
-  <div class="page-inner"></div>
+  <div class="page-inner">
+    <ul class="item-list">
+      <li class="item-list__item" v-for="(item, key) in basket" :key="key">
+        <Card :item="item" :type="'order'" />
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
+import Card from "@/components/card";
+
 export default {
-  name: "Order"
+  name: "Order",
+  components: {
+    Card
+  },
+  computed: {
+    ...mapState("order", ["basket"])
+  }
 };
 </script>

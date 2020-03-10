@@ -2,7 +2,7 @@
   <div class="card">
     <img :src="item.image" class="card__image" />
     <div class="card__title">{{ item.name }}</div>
-    <div class="card__bottom">
+    <div class="card__bottom" v-if="type === 'list'">
       <div class="card__price">
         <span>{{ item.price }}</span>
         <span>{{ item.currency }}</span>
@@ -13,6 +13,13 @@
         @click="selectItem(item)"
       >
         Sepete Ekle
+      </div>
+    </div>
+    <div class="card__bottom" v-else>
+      <input type="number" class="card__amount" />
+      <div class="card__price">
+        <span>{{ item.price }}</span>
+        <span>{{ item.currency }}</span>
       </div>
     </div>
   </div>
@@ -32,6 +39,10 @@ export default {
     item: {
       type: Object,
       required: true
+    },
+    type: {
+      type: String,
+      default: "list"
     }
   },
   computed: {

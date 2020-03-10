@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <ul class="item-list page-inner">
+  <div class="page-inner">
+    <ul class="item-list">
       <li class="item-list__item" v-for="(item, key) in data" :key="key">
         <Card :item="item" />
       </li>
