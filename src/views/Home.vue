@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <ul class="item-list">
       <li class="item-list__item" v-for="(item, key) in data" :key="key">
         <Card :item="item" />
@@ -10,7 +9,6 @@
 </template>
 
 <script>
-import Header from "@/components/header";
 import Card from "@/components/card";
 
 export default {
@@ -21,7 +19,6 @@ export default {
     };
   },
   components: {
-    Header,
     Card
   },
   created() {
