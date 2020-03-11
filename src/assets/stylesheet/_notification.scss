@@ -5,7 +5,7 @@
   background-color: var(--color-white);
   box-shadow: var(--template-shadow);
   border-radius: 4px;
-  position: absolute;
+  position: fixed;
   bottom: 60px;
   right: -410px;
   transition: var(--template-transition);
@@ -13,5 +13,12 @@
 
   &--active {
     right: 60px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .notification {
+    top: 20px;
+    bottom: auto;
   }
 }

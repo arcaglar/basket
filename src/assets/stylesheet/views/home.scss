@@ -14,3 +14,24 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .item-list {
+    &__item {
+      width: calc(50% - 16px);
+
+      &:nth-child(2n + 2) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .item-list {
+    &__item {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+}
