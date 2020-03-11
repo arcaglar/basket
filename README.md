@@ -18,7 +18,7 @@ Just run `yarn run test:unit`
 
 ## Deployment
 
-This project deploying on master branch -> `http://hurem-basket.herokuapp.com/`
+This project deploying on master branch -> `https://hurem-basket.now.sh/`
 If you want new deploying -> `git push origin master`
 
 ## Static Serve
@@ -52,7 +52,7 @@ Sometimes it’s helpful to know what all these different files are for
 │  │
 │  └─ router                    # Vue Router
 │
-├─ server                       # Node server file for Heroku
+├─ server                       # Node server file for zeit.co
 │
 ├─ package.json                 # Project manifest
 └─ README.md                    # This file
