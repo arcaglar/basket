@@ -22,4 +22,6 @@ const router = new VueRouter({
   routes
 });
 
+document.title = "Hurem Basket App";
+
 export default router;
