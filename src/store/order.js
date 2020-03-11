@@ -9,8 +9,8 @@ export default {
     getProducts() {
       return Vue.prototype.$http.get(`/listing`);
     },
-    completeOrder(_, data) {
-      return Vue.prototype.$http.post(`/order`, data);
+    async completeOrder(_, data) {
+      return await Vue.prototype.$http.post(`/order`, data);
     },
     addBasket({ commit }, item) {
       commit("SET_BASKET", item);
@@ -20,6 +20,9 @@ export default {
     },
     deleteProduct({ commit }, id) {
       commit("REMOVE_PRODUCT", id);
+    },
+    clearBasket({ commit }) {
+      commit("CLEAR_BASKET");
     }
   },
   mutations: {
@@ -41,6 +44,9 @@ export default {
           state.basket.splice(i, 1);
         }
       }
+    },
+    CLEAR_BASKET(state) {
+      state.basket = [];
     }
   }
 };

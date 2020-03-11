@@ -31,9 +31,11 @@ export default {
   },
   methods: {
     ...mapActions({
-      completeOrder: "order/completeOrder"
+      clearBasket: "order/clearBasket",
+      completeOrder: "order/completeOrder",
+      setNotification: "global/setNotificationVisibility"
     }),
-    onSubmit() {
+    async onSubmit() {
       let arr = [];
       let data = this.basket;
       for (let i = 0; i < data.length; i++) {
@@ -43,9 +45,19 @@ export default {
         delete data[i].currency;
         arr.push(data[i]);
       }
-      this.completeOrder(arr).then(response => {
-        console.log(response);
-      });
+      try {
+        await this.completeOrder(arr).then(response => {
+          if (response.status === 200) {
+            this.setNotification([true, "Order Success"]);
+            this.clearBasket();
+            this.$router.push({ name: "Home" });
+          }
+        });
+      } catch (e) {
+        if (e.response.status === 404) {
+          this.setNotification([true, e.response.data.message]);
+        }
+      }
     }
   }
 };

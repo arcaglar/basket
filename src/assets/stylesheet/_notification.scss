@@ -1,0 +1,16 @@
+.notification {
+  width: 400px;
+  height: 100px;
+  background-color: var(--color-white);
+  box-shadow: var(--template-shadow);
+  border-radius: 4px;
+  position: absolute;
+  bottom: 60px;
+  right: -410px;
+  transition: var(--template-transition);
+  z-index: 99;
+
+  &--active {
+    right: 60px;
+  }
+}
