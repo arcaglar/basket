@@ -39,11 +39,11 @@ export default {
       let arr = [];
       let data = this.basket;
       for (let i = 0; i < data.length; i++) {
-        delete data[i].name;
-        delete data[i].image;
-        delete data[i].price;
-        delete data[i].currency;
-        arr.push(data[i]);
+        let postData = {
+          id: data[i].id,
+          amount: data[i].amount
+        };
+        arr.push(postData);
       }
       try {
         await this.completeOrder(arr).then(response => {
